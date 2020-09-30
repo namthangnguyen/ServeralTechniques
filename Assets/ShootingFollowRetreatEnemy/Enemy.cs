@@ -34,10 +34,11 @@ public class Enemy : MonoBehaviour {
             transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
         }
 
-
         // Weapon direction follow Charactor
         Vector2 difference = player.position - transform.position; 
-        float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg; // Atan2: tang của vector difference __ Rad2Deg chuyển từ radian sang độ
+        float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg; 
+        // Atan2: góc của vector difference với trục x 
+        // *Rad2Deg để chuyển từ radian sang độ
         transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
 
         // Shooting Enemy

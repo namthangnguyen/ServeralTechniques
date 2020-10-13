@@ -31,8 +31,9 @@ public class FortuneWheelRewards : MonoBehaviour {
         }
     }
 
-    public void SetupRewards(int[] rewards) {
+    public void SetupRewards(int[] rewards, Sprite[] icons) {
         for (int i = 0; i < numOfChild; i++) {
+            listRewards[i].GetChild(0).GetComponent<Image>().sprite = icons[i];
             listRewards[i].GetChild(1).GetComponent<Text>().text = rewards[i].ToString();
         }
     }

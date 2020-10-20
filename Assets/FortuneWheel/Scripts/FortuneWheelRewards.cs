@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class FortuneWheelRewards : MonoBehaviour {
+
 
     private bool _isStarted = false;
     public bool IsStarted {get { return _isStarted;}}
@@ -15,8 +17,6 @@ public class FortuneWheelRewards : MonoBehaviour {
     private float[] _sectorAngle = new float[] {30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 360};
     private float _startAngle = 0f;
     private float _finalAngle;
-    private float _currentLerpRotationTime;
-
     private int numOfChild;
     private Transform[] listRewards;
 
@@ -38,9 +38,8 @@ public class FortuneWheelRewards : MonoBehaviour {
         }
     }
 
-    public void TurnWheel() {
+    public void StartWheel(int numOfRewards, int[] rewards, Sprite[] sprites, System.Action callback) {
         if (!_isStarted) {
-            _currentLerpRotationTime = 0f;
 
             int randomFullCircle = UnityEngine.Random.Range(4, 7);
             float randomFinalAngle = _sectorAngle[UnityEngine.Random.Range(0, _sectorAngle.Length)];
@@ -48,35 +47,17 @@ public class FortuneWheelRewards : MonoBehaviour {
             _finalAngle = -(randomFullCircle * 360 + randomFinalAngle);
             _isStarted = true;
             _haveResult = false;
-        }
+            StartCoroutine(DOTweenCompletion());
+        }        
     }
 
-    void Update() {
-        if (_isStarted) {
-            float maxLerpRotationTime = 4f;
-
-            // increment timer once per frame
-            _currentLerpRotationTime += Time.deltaTime;
-
-            if (_currentLerpRotationTime > maxLerpRotationTime || this.transform.eulerAngles.z == _finalAngle) {
-                _currentLerpRotationTime = maxLerpRotationTime;
-                _isStarted = false;
-                _startAngle = _finalAngle % 360;
-
-                _haveResult = true;
-            }
-
-            // Calculate current position using linear interpolation
-            float t = _currentLerpRotationTime / maxLerpRotationTime;
-
-            // This formulae allows to speed up at start and speed down at the end of rotation.
-            // Try to change this values to customize the speed
-            t = t * t * t * (t * (6f * t - 15f) + 10f);
-
-            float angle = Mathf.Lerp(_startAngle, _finalAngle, t);
-            this.transform.eulerAngles = new Vector3(0, 0, angle);
-
-        } else return;
+    IEnumerator DOTweenCompletion(){
+        Tween myTween = gameObject.transform.DORotate(new Vector3(0, 0, _finalAngle), 2f, RotateMode.FastBeyond360).SetEase(Ease.OutElastic);
+        yield return myTween.WaitForKill();
+        // This log will happen after the tween has completed
+        _isStarted = false;
+        _startAngle = _finalAngle % 360;
+        _haveResult = true;
     }
 
     public int GetResult() {

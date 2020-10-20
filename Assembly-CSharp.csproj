@@ -36,12 +36,23 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\FortuneWheel\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
      <Compile Include="Assets\FortuneWheel\Scripts\FortuneWheelManager.cs" />
      <Compile Include="Assets\FortuneWheel\Scripts\FortuneWheelRewards.cs" />
+     <Compile Include="Assets\FortuneWheel\DOTween\Modules\DOTweenModulePhysics.cs" />
+     <Compile Include="Assets\FortuneWheel\Scripts\GameManager.cs" />
+     <Compile Include="Assets\FortuneWheel\DOTween\Modules\DOTweenModuleSprite.cs" />
      <Compile Include="Assets\FollowRetreatEnemy\Scripts\EnemyProjectile.cs" />
      <Compile Include="Assets\FollowRetreatEnemy\Scripts\Enemy.cs" />
+     <Compile Include="Assets\FortuneWheel\DOTween\Modules\DOTweenModuleUtils.cs" />
+     <Compile Include="Assets\FortuneWheel\DOTween\Modules\DOTweenModulePhysics2D.cs" />
+     <Compile Include="Assets\FortuneWheel\DOTween\Modules\DOTweenModuleUI.cs" />
      <Compile Include="Assets\FollowRetreatEnemy\Scripts\PointAndShoot.cs" />
      <Compile Include="Assets\FollowRetreatEnemy\Scripts\Player.cs" />
+     <Compile Include="Assets\FortuneWheel\DOTween\Modules\DOTweenModuleAudio.cs" />
+     <Compile Include="Assets\StealthEnemy\Player.cs" />
+     <Compile Include="Assets\StealthEnemy\Enemy.cs" />
+     <None Include="Assets\FortuneWheel\DOTween\readme.txt" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -221,6 +232,9 @@
     </Reference>
     <Reference Include="UnityEditor">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.4f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+        <HintPath>E:/Project/SeveralTechniques/Assets/FortuneWheel/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2020.1.4f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

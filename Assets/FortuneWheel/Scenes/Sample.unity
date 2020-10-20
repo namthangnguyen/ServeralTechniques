@@ -249,8 +249,9 @@ GameObject:
   - component: {fileID: 359695296}
   - component: {fileID: 359695298}
   - component: {fileID: 359695297}
+  - component: {fileID: 359695299}
   m_Layer: 5
-  m_Name: FortuneSpinDialog
+  m_Name: FortuneWheelDialog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -271,8 +272,9 @@ RectTransform:
   - {fileID: 1889449652}
   - {fileID: 897814942}
   - {fileID: 524909268}
+  - {fileID: 863135246}
   m_Father: {fileID: 432910106}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -317,6 +319,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359695295}
   m_CullTransparentMesh: 0
+--- !u!114 &359695299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359695295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 362b105195b100943b25a2c6d757b026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TurnButton: {fileID: 524909270}
+  Wheel: {fileID: 924099211}
+  CoinsDeltaText: {fileID: 357037046}
+  CurrentCoinsText: {fileID: 449945064}
+  TurnCost: 300
+  CurrentCoinsAmount: 1000
+  listIcons:
+  - {fileID: 21300000, guid: 92310cd8fa26e9f42880da58d0c61974, type: 3}
+  - {fileID: 21300000, guid: b9df09de8e6723d4596d9b699dd3dd5a, type: 3}
+  - {fileID: 21300000, guid: cf24273292aa5724289fff17d4250802, type: 3}
+  - {fileID: 21300000, guid: 11b704a70d28df84bb4968c5738f3507, type: 3}
+  - {fileID: 21300000, guid: 110470e204f60a1478d140ea02f309e3, type: 3}
+  - {fileID: 21300000, guid: e15c53739a13446498e1b50b5327f098, type: 3}
+  - {fileID: 21300000, guid: 026c154dcf5a92743bf6251600aef3f6, type: 3}
+  - {fileID: 21300000, guid: 66e61f53385012e4da76537c3eab6ded, type: 3}
+  - {fileID: 21300000, guid: 8f16f2fa6e8c89e488f59615c182fc97, type: 3}
+  - {fileID: 21300000, guid: c90cad1c9aec2624f82869e907e8ffa6, type: 3}
+  - {fileID: 21300000, guid: bdd441eb13523834990c0be85bb1018e, type: 3}
+  - {fileID: 21300000, guid: aba376f1ea104294887a96059e2da2d6, type: 3}
 --- !u!1 &432910102
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,6 +440,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 1402124359}
   - {fileID: 359695296}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -612,7 +646,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 617105123}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FortuneWheelManager, Assembly-CSharp
         m_MethodName: TurnWheel
         m_Mode: 1
@@ -771,29 +805,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 617105122}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 362b105195b100943b25a2c6d757b026, type: 3}
+  m_Script: {fileID: 11500000, guid: 03ac7f15533368c4bac11b9e423b93ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TurnButton: {fileID: 524909270}
-  Circle: {fileID: 924099211}
-  CoinsDeltaText: {fileID: 357037046}
-  CurrentCoinsText: {fileID: 449945064}
-  TurnCost: 300
-  CurrentCoinsAmount: 1000
-  PreviousCoinsAmount: 0
-  listIcons:
-  - {fileID: 21300000, guid: 92310cd8fa26e9f42880da58d0c61974, type: 3}
-  - {fileID: 21300000, guid: b9df09de8e6723d4596d9b699dd3dd5a, type: 3}
-  - {fileID: 21300000, guid: cf24273292aa5724289fff17d4250802, type: 3}
-  - {fileID: 21300000, guid: 11b704a70d28df84bb4968c5738f3507, type: 3}
-  - {fileID: 21300000, guid: 110470e204f60a1478d140ea02f309e3, type: 3}
-  - {fileID: 21300000, guid: e15c53739a13446498e1b50b5327f098, type: 3}
-  - {fileID: 21300000, guid: 026c154dcf5a92743bf6251600aef3f6, type: 3}
-  - {fileID: 21300000, guid: 66e61f53385012e4da76537c3eab6ded, type: 3}
-  - {fileID: 21300000, guid: 8f16f2fa6e8c89e488f59615c182fc97, type: 3}
-  - {fileID: 21300000, guid: c90cad1c9aec2624f82869e907e8ffa6, type: 3}
-  - {fileID: 21300000, guid: bdd441eb13523834990c0be85bb1018e, type: 3}
-  - {fileID: 21300000, guid: aba376f1ea104294887a96059e2da2d6, type: 3}
+  FortuneWheelDialog: {fileID: 359695295}
 --- !u!4 &617105124
 Transform:
   m_ObjectHideFlags: 0
@@ -874,6 +889,81 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &863135245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 863135246}
+  - component: {fileID: 863135248}
+  - component: {fileID: 863135247}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &863135246
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863135245}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.4285715, y: 1.4285715, z: 1}
+  m_Children: []
+  m_Father: {fileID: 359695296}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 134.28568}
+  m_SizeDelta: {x: 520, y: 520}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &863135247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863135245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 6bd935406ce532d4ca7638b2ef79b8df, type: 3}
+  m_Type: 3
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 0.122
+  m_FillClockwise: 1
+  m_FillOrigin: 1
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &863135248
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863135245}
+  m_CullTransparentMesh: 0
 --- !u!1 &897814941
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,6 +1007,138 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4865649393884775087, guid: 3573b8e9913ef2241bfc391b2fd64714, type: 3}
   m_PrefabInstance: {fileID: 4865649393598750756}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1402124358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1402124359}
+  - component: {fileID: 1402124362}
+  - component: {fileID: 1402124361}
+  - component: {fileID: 1402124360}
+  m_Layer: 5
+  m_Name: OpenFortuneWheel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1402124359
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402124358}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1989362569}
+  m_Father: {fileID: 432910106}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 440, y: 120}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1402124360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402124358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1402124361}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 617105123}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: TurnOnFortuneWheelDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1402124361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402124358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1402124362
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402124358}
+  m_CullTransparentMesh: 0
 --- !u!1 &1786791612
 GameObject:
   m_ObjectHideFlags: 0
@@ -998,13 +1220,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 617105122}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 359695299}
+        m_TargetAssemblyTypeName: FortuneWheelManager, Assembly-CSharp
+        m_MethodName: TurnOffFortuneWheelDialog
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1128,6 +1350,85 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4865649394949740176, guid: 3573b8e9913ef2241bfc391b2fd64714, type: 3}
   m_PrefabInstance: {fileID: 4865649393598750756}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1989362568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1989362569}
+  - component: {fileID: 1989362571}
+  - component: {fileID: 1989362570}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1989362569
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989362568}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1402124359}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1989362570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989362568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.6770066, b: 0.990566, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: c9fce2efeecdea343bb3e387a1cbfc0c, type: 3}
+    m_FontSize: 72
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 72
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Fortune Wheel
+--- !u!222 &1989362571
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989362568}
+  m_CullTransparentMesh: 0
 --- !u!1001 &4865649393598750756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1135,6 +1436,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 359695296}
     m_Modifications:
+    - target: {fileID: 4865649393884775087, guid: 3573b8e9913ef2241bfc391b2fd64714, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4865649394949740176, guid: 3573b8e9913ef2241bfc391b2fd64714, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1185,7 +1490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4865649394949740176, guid: 3573b8e9913ef2241bfc391b2fd64714, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 125.00106
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 4865649394949740176, guid: 3573b8e9913ef2241bfc391b2fd64714, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1219,9 +1524,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4865649394949740177, guid: 3573b8e9913ef2241bfc391b2fd64714, type: 3}
+      propertyPath: m_Type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865649394949740177, guid: 3573b8e9913ef2241bfc391b2fd64714, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865649394949740177, guid: 3573b8e9913ef2241bfc391b2fd64714, type: 3}
+      propertyPath: m_FillOrigin
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4865649394949740183, guid: 3573b8e9913ef2241bfc391b2fd64714, type: 3}
       propertyPath: m_Name
-      value: Circle Border
+      value: WheelBorder
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3573b8e9913ef2241bfc391b2fd64714, type: 3}

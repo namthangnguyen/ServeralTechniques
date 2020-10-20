@@ -7,12 +7,12 @@ using System;
 public class FortuneWheelManager : MonoBehaviour
 {
     public Button TurnButton;
-    public GameObject Circle; 			    // Rotatable Object with rewards
+    public GameObject Wheel; 			    // Rotatable Object with rewards
     public Text CoinsDeltaText; 		    // Pop-up text with wasted or rewarded coins amount
     public Text CurrentCoinsText; 		    // Pop-up text with wasted or rewarded coins amount
     public int TurnCost = 300;			    // How much coins user waste when turn whe wheel
     public int CurrentCoinsAmount = 1000;	// Started coins amount. In your project it can be set up from CoinsManager or from PlayerPrefs and so on
-    public int PreviousCoinsAmount;		    // For wasted coins animation
+    private int PreviousCoinsAmount;		    // For wasted coins animation
 
     public Sprite[] listIcons = new Sprite[12];
     private int[] listRewards = new int[] {300, 500, 1000, 200, 1000, 500, 100, 200, 300, 800, 500, 700};
@@ -23,8 +23,7 @@ public class FortuneWheelManager : MonoBehaviour
         PreviousCoinsAmount = CurrentCoinsAmount;
         CurrentCoinsText.text = CurrentCoinsAmount.ToString();
 
-        fortuneWheel = Circle.GetComponent<FortuneWheelRewards>();
-        fortuneWheel.SetupRewards(listRewards, listIcons);
+        fortuneWheel = Wheel.GetComponent<FortuneWheelRewards>();
     }
 
     public void TurnWheel()
@@ -32,7 +31,7 @@ public class FortuneWheelManager : MonoBehaviour
         // Player has enough money to turn the wheel
         if (CurrentCoinsAmount >= TurnCost)
         {   
-            fortuneWheel.TurnWheel();
+            // fortuneWheel.StartWheel();
 
             PreviousCoinsAmount = CurrentCoinsAmount;
 
@@ -68,6 +67,13 @@ public class FortuneWheelManager : MonoBehaviour
             RewardCoins(listRewards[fortuneWheel.GetResult()]);
         }
 
+    }
+
+    public void SetRewards() {
+    }
+
+    public void TurnOffFortuneWheelDialog() {
+        gameObject.SetActive(false);
     }
 
     private void RewardCoins(int awardCoins)

@@ -1,7 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{052E6E5C-E4A7-8729-92EA-A8D9832FA519}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParadoxNotion", "ParadoxNotion.csproj", "{238C88DD-72E9-5E26-2583-89182D3777AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +15,10 @@ Global
 		{052E6E5C-E4A7-8729-92EA-A8D9832FA519}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{052E6E5C-E4A7-8729-92EA-A8D9832FA519}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{052E6E5C-E4A7-8729-92EA-A8D9832FA519}.Release|Any CPU.Build.0 = Release|Any CPU
+		{238C88DD-72E9-5E26-2583-89182D3777AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{238C88DD-72E9-5E26-2583-89182D3777AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{238C88DD-72E9-5E26-2583-89182D3777AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{238C88DD-72E9-5E26-2583-89182D3777AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
